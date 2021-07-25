@@ -3,6 +3,7 @@ package com.blurspace.doov.customdialogues;
 import android.Manifest;
 import android.app.Dialog;
 
+import android.app.FragmentManager;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -42,17 +43,44 @@ public class dreamadbottomdialog extends BottomSheetDialogFragment {
         EditText field=v.findViewById(R.id.dreamsetfield);
         Button savebtn=v.findViewById(R.id.dreamsavebtn);
         Button deletebtn=v.findViewById(R.id.dreamdeletebtn);
+        AdminPortalViewModel avm=new ViewModelProvider(getActivity()).get(AdminPortalViewModel.class);
+        Bundle bundle=this.getArguments();
+        String imgurlrec=null;
+        String namerec;
+        String fieldrec;
+        if(bundle!=null) {
+            imgurlrec=bundle.getString("imgurl");
+             namerec=bundle.getString("name");
+            fieldrec=bundle.getString("field");
+            if(imgurlrec!=null && namerec!=null) {
+                Picasso.get().load(imageuri).into(dreamimg);
+                name.setText(namerec);
+                field.setText(fieldrec);
+            }
+        }
+
+
+
+
 
         savebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AdminPortalViewModel avm=new ViewModelProvider(getActivity()).get(AdminPortalViewModel.class);
+
                 if(!name.getText().toString().isEmpty() && imageuri!=null && !field.getText().toString().isEmpty()){
                 avm.AddDreamtoDB(imageuri,name.getText().toString(),field.getText().toString());
             }
                 else {
                     Toast.makeText(getActivity(), "Something is missing!", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        String finalImgurlrec = imgurlrec;
+        deletebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                avm.RemoveDreamFromDB(finalImgurlrec,name.getText().toString(),field.getText().toString());
             }
         });
         dreamimg.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +100,7 @@ public class dreamadbottomdialog extends BottomSheetDialogFragment {
                 }
             }
         });
+
 
        return v;
     }
@@ -101,11 +130,12 @@ public class dreamadbottomdialog extends BottomSheetDialogFragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
             super.onActivityResult(requestCode, resultCode, data);
 
-            if(requestCode==IMAGE_PICK_CODE && data.getData()!=null) {
+            if(requestCode==IMAGE_PICK_CODE) {
                 imageuri=data.getData();
                 Picasso.get().load(imageuri).into(dreamimg);
 
             }
     }
+
 }
 

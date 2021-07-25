@@ -32,7 +32,7 @@ import java.util.List;
 public class AdminPortal extends AppCompatActivity {
     ActivityAdminPortalBinding apbinding;
     private AdminPortalViewModel adviewmodel;
-    private AdminDreamAdapter adadapter;
+    public AdminDreamAdapter adadapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +64,6 @@ public class AdminPortal extends AppCompatActivity {
                 }
             },20);
         }
-
 
         adviewmodel= new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(this.getApplication())).get(AdminPortalViewModel.class);
         adviewmodel.initwork(this);
