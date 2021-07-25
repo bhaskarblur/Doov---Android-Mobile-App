@@ -2,13 +2,14 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginRight="13dp"
 
     app:cardBackgroundColor="@color/bgcolor"
     app:cardCornerRadius="8dp">
+
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="180dp"
@@ -20,6 +21,7 @@
         android:id="@+id/admindreamcard"
         android:foreground="?android:selectableItemBackground">
 
+
         <ImageView
             android:id="@+id/admindreamcardimg"
             android:layout_width="match_parent"
@@ -28,14 +30,14 @@
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/sampledreamimg" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/admindreamcardname"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="2dp"
             android:ellipsize="marquee"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -43,7 +45,6 @@
             android:marqueeRepeatLimit="marquee_forever"
             android:scrollHorizontally="true"
             android:singleLine="true"
-            android:text="Web Developer"
             android:textColor="@color/seccolor"
             android:textSize="17sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +57,6 @@
             android:layout_marginStart="11dp"
             android:layout_marginTop="5dp"
             android:fontFamily="@font/calibiri"
-            android:text="Technology"
             android:textColor="@color/seccolor"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +71,11 @@
             android:clickable="true"
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/yellow_options_icon" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

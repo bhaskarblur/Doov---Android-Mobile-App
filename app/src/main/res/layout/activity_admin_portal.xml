@@ -74,13 +74,53 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="22dp"
                 android:layout_marginTop="12dp"
+                android:visibility="invisible"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView12"
                 tools:itemCount="1"
-                tools:listitem="@layout/admin_dreamlay">
+                tools:listitem="@layout/admin_dreamlay"
+                tools:visibility="gone">
+
 
             </androidx.recyclerview.widget.RecyclerView>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/admindreamshimmer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/bgcolor"
+                android:orientation="horizontal"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView12"
+                app:shimmer_auto_start="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <include
+                        android:id="@+id/shimmerdreamsublay1"
+                        layout="@layout/admin_dreamshimmerlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <include
+                        android:id="@+id/shimmerdreamsublay2"
+                        layout="@layout/admin_dreamshimmerlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="13dp" />
+
+                </LinearLayout>
+
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
 
             <TextView
                 android:id="@+id/textView13"
@@ -98,7 +138,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/admin_dreamlist" />
+                app:layout_constraintTop_toBottomOf="@+id/admindreamshimmer" />
 
             <ImageView
                 android:id="@+id/adminplatformadd"
@@ -107,7 +147,7 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="19dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/admin_dreamlist"
+                app:layout_constraintTop_toBottomOf="@+id/admindreamshimmer"
                 app:srcCompat="@drawable/add_img" />
 
             <ImageView

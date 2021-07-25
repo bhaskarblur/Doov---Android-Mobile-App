@@ -70,9 +70,17 @@ public class AdminPortal extends AppCompatActivity {
         adviewmodel.getdreamModel().observe(this, new Observer<List<DreamsModel>>() {
             @Override
             public void onChanged(List<DreamsModel> dreamsModels) {
+                if(adviewmodel.getdreamModel().getValue().size()>0) {
+                    apbinding.admindreamshimmer.setVisibility(View.VISIBLE);
+                }
+
                 adadapter.notifyDataSetChanged();
             }
         });
+
+        if(adviewmodel.getdreamModel().getValue().size()<2 && adviewmodel.getdreamModel().getValue().size()>0) {
+            apbinding.shimmerdreamsublay2.getRoot().setVisibility(View.INVISIBLE);
+        }
         loadDreamList();
 
         viewfunctions();
@@ -103,14 +111,28 @@ public class AdminPortal extends AppCompatActivity {
         });
 
 
+
     }
 
     private void loadDreamList() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                apbinding.admindreamshimmer.stopShimmer();
+                apbinding.admindreamshimmer.hideShimmer();
+                apbinding.admindreamshimmer.setVisibility(View.INVISIBLE);
+                apbinding.adminDreamlist.setVisibility(View.VISIBLE);
+            }
+        },3000);
+
+
+
         adadapter= new AdminDreamAdapter(AdminPortal.this,adviewmodel.getdreamModel().getValue());
         LinearLayoutManager llm=new LinearLayoutManager(this);
         llm.setOrientation(RecyclerView.HORIZONTAL);
         apbinding.adminDreamlist.setLayoutManager(llm);
         apbinding.adminDreamlist.setAdapter(adadapter);
+
     }
 
     @Override
