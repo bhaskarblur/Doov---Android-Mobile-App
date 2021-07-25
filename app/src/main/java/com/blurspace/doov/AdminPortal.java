@@ -1,5 +1,6 @@
 package com.blurspace.doov;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -61,7 +62,7 @@ public class AdminPortal extends AppCompatActivity {
                     nocondialog.show(getSupportFragmentManager(),"nocondialog");
                     nocondialog.setCancelable(false);
                 }
-            },100);
+            },20);
         }
 
 
@@ -107,5 +108,8 @@ public class AdminPortal extends AppCompatActivity {
         apbinding.adminDreamlist.setAdapter(adadapter);
     }
 
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode,Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 }

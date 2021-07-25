@@ -14,23 +14,47 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.blurspace.doov.R;
+import com.blurspace.doov.ViewModels.AdminPortalViewModel;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.squareup.picasso.Picasso;
 
 
 public class dreamadbottomdialog extends BottomSheetDialogFragment {
     final int IMAGE_PICK_CODE=1000;
     final int PERMISSION_CODE=1001;
+    private Uri imageuri;
+    ImageView dreamimg;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
        View v=inflater.inflate(R.layout.dreamaddbottomdialog,container,false);
-        ImageView dreamimg=v.findViewById(R.id.dreamsetimg);
+         dreamimg=v.findViewById(R.id.dreamsetimg);
+        EditText name=v.findViewById(R.id.dreamsetname);
+        EditText field=v.findViewById(R.id.dreamsetfield);
+        Button savebtn=v.findViewById(R.id.dreamsavebtn);
+        Button deletebtn=v.findViewById(R.id.dreamdeletebtn);
+
+        savebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AdminPortalViewModel avm=new ViewModelProvider(getActivity()).get(AdminPortalViewModel.class);
+                if(!name.getText().toString().isEmpty() && imageuri!=null && !field.getText().toString().isEmpty()){
+                avm.AddDreamtoDB(imageuri,name.getText().toString(),field.getText().toString());
+            }
+                else {
+                    Toast.makeText(getActivity(), "Something is missing!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
         dreamimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +72,7 @@ public class dreamadbottomdialog extends BottomSheetDialogFragment {
                 }
             }
         });
+
        return v;
     }
     @Override
@@ -65,7 +90,6 @@ public class dreamadbottomdialog extends BottomSheetDialogFragment {
         }
     }
 
-    
 
     private void pickImageFromGallery() {
         Intent intent=new Intent(Intent.ACTION_PICK);
@@ -73,11 +97,15 @@ public class dreamadbottomdialog extends BottomSheetDialogFragment {
         startActivityForResult(intent,IMAGE_PICK_CODE);
     }
 
-    private String getFileExtension(Uri uri){
-        ContentResolver cr=getActivity().getContentResolver();
-        MimeTypeMap mime= MimeTypeMap.getSingleton();
-        return mime.getExtensionFromMimeType(cr.getType(uri));
-    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+            super.onActivityResult(requestCode, resultCode, data);
 
+            if(requestCode==IMAGE_PICK_CODE && data.getData()!=null) {
+                imageuri=data.getData();
+                Picasso.get().load(imageuri).into(dreamimg);
+
+            }
+    }
 }
 
