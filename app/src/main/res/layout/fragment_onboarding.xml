@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgcolor"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:id="@+id/onbimg"
+        android:layout_width="match_parent"
+        android:layout_height="445dp"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="12dp"
+        android:paddingTop="50dp"
+        android:paddingRight="12dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/onbheadtxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/onbimg1" />
+
+    <TextView
+        android:id="@+id/onbheadtxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:letterSpacing="0.01"
+        android:text="Pick Your Dream"
+        android:textAlignment="center"
+        android:textColor="@color/primccolor"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/onbimg" />
+
+    <TextView
+        android:id="@+id/onbsubtxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/calibiri"
+        android:lineSpacingExtra="5dp"
+        android:letterSpacing="0.03"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="Pick Your 'Dream' From Various Dreams And Get Ready To Accomplish It!"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#EDEDED"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/onbheadtxt" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
