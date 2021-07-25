@@ -91,7 +91,13 @@ public class AdminPortal extends AppCompatActivity {
         apbinding.admindreamadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("imgurl","none");
+                bundle.putString("name","none");
+                bundle.putInt("position",-1);
+                bundle.putString("field","none");
                 com.blurspace.doov.customdialogues.dreamadbottomdialog dreamadbottomdialog=new dreamadbottomdialog();
+                dreamadbottomdialog.setArguments(bundle);
                 dreamadbottomdialog.show(getSupportFragmentManager(),"dreamadbottomdialog");
             }
         });
@@ -110,5 +116,23 @@ public class AdminPortal extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode,Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        this.getViewModelStore().clear();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        this.getViewModelStore().clear();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        this.getViewModelStore().clear();
     }
 }

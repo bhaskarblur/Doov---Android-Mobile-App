@@ -35,6 +35,7 @@ public class dreamadbottomdialog extends BottomSheetDialogFragment {
     final int PERMISSION_CODE=1001;
     private Uri imageuri;
     ImageView dreamimg;
+    Integer pos;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
        View v=inflater.inflate(R.layout.dreamaddbottomdialog,container,false);
@@ -43,15 +44,17 @@ public class dreamadbottomdialog extends BottomSheetDialogFragment {
         EditText field=v.findViewById(R.id.dreamsetfield);
         Button savebtn=v.findViewById(R.id.dreamsavebtn);
         Button deletebtn=v.findViewById(R.id.dreamdeletebtn);
+
         AdminPortalViewModel avm=new ViewModelProvider(getActivity()).get(AdminPortalViewModel.class);
         Bundle bundle=this.getArguments();
-        String imgurlrec=null;
-        String namerec;
-        String fieldrec;
+
+
+        String deleteimguri=bundle.getString("imgurl");
         if(bundle!=null) {
-            imgurlrec=bundle.getString("imgurl");
-             namerec=bundle.getString("name");
-            fieldrec=bundle.getString("field");
+            pos=bundle.getInt("position");
+            String imgurlrec=bundle.getString("imgurl");
+             String namerec=bundle.getString("name");
+            String fieldrec=bundle.getString("field");
             if(imgurlrec!=null && namerec!=null) {
                 Picasso.get().load(imageuri).into(dreamimg);
                 name.setText(namerec);
@@ -60,22 +63,21 @@ public class dreamadbottomdialog extends BottomSheetDialogFragment {
         }
 
 
-
-
-
+        Integer finalPos = pos;
         savebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if(!name.getText().toString().isEmpty() && imageuri!=null && !field.getText().toString().isEmpty()){
-                avm.AddDreamtoDB(imageuri,name.getText().toString(),field.getText().toString());
+
+                avm.AddDreamtoDB(imageuri,imageuri.toString(),name.getText().toString(),field.getText().toString(), finalPos);
             }
                 else {
                     Toast.makeText(getActivity(), "Something is missing!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-        String finalImgurlrec = imgurlrec;
+        String finalImgurlrec = deleteimguri;
         deletebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
