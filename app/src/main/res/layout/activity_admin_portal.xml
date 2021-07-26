@@ -81,7 +81,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView12"
                 tools:itemCount="1"
                 tools:listitem="@layout/admin_dreamlay"
-                tools:visibility="gone">
+                tools:visibility="visible">
 
 
             </androidx.recyclerview.widget.RecyclerView>
@@ -94,7 +94,7 @@
                 android:layout_marginTop="12dp"
                 android:background="@color/bgcolor"
                 android:orientation="horizontal"
-                android:visibility="invisible"
+                android:visibility="visible"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView12"
                 app:shimmer_auto_start="true">
@@ -112,6 +112,13 @@
 
                     <include
                         android:id="@+id/shimmerdreamsublay2"
+                        layout="@layout/admin_dreamshimmerlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="13dp" />
+
+                    <include
+                        android:id="@+id/shimmerdreamsublay3"
                         layout="@layout/admin_dreamshimmerlay"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
