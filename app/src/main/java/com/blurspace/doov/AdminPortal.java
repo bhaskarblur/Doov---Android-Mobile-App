@@ -1,6 +1,5 @@
 package com.blurspace.doov;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -20,20 +19,22 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.blurspace.doov.Adapters.AdminDreamAdapter;
+import com.blurspace.doov.Adapters.AdminPlatformAdapter;
 import com.blurspace.doov.Models.DreamsModel;
+import com.blurspace.doov.Models.PlatformModel;
 import com.blurspace.doov.ViewModels.AdminPortalViewModel;
 import com.blurspace.doov.customdialogues.dreamadbottomdialog;
 import com.blurspace.doov.customdialogues.nocondialog;
-import com.blurspace.doov.customdialogues.passresetdialog;
+import com.blurspace.doov.customdialogues.platformadbottomdialog;
 import com.blurspace.doov.databinding.ActivityAdminPortalBinding;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AdminPortal extends AppCompatActivity {
     ActivityAdminPortalBinding apbinding;
     private AdminPortalViewModel adviewmodel;
     public AdminDreamAdapter adadapter;
+    private AdminPlatformAdapter pladapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +67,8 @@ public class AdminPortal extends AppCompatActivity {
             },0);
         }
 
+        if(apbinding.adminplatformshimmer.getVisibility()==View.VISIBLE) {
+        }
         adviewmodel= new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(this.getApplication())).get(AdminPortalViewModel.class);
         adviewmodel.initwork(this);
         adviewmodel.getdreamModel().observe(this, new Observer<List<DreamsModel>>() {
@@ -91,14 +94,39 @@ public class AdminPortal extends AppCompatActivity {
                 adadapter.notifyDataSetChanged();
             }
         });
+        adviewmodel.getplatformModel().observe(this, new Observer<List<PlatformModel>>() {
+            @Override
+            public void onChanged(List<PlatformModel> platformModels) {
+                if(adviewmodel.getplatformModel().getValue().size()>0) {
+                    apbinding.adminplatformshimmer.setVisibility(View.VISIBLE);
+                    List<DreamsModel> shimmeralerter= adviewmodel.getdreamModel().getValue();
+                    if(shimmeralerter.get(shimmeralerter.size()-1).getDreamimgurl()!=null) {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                apbinding.adminplatformshimmer.stopShimmer();
+                                apbinding.adminplatformshimmer.hideShimmer();
+                                apbinding.adminplatformshimmer.setVisibility(View.INVISIBLE);
+                                apbinding.adminPlatformlist.setVisibility(View.VISIBLE);
+                            }
+                        },1000);
+                    }
+
+
+                }
+                pladapter.notifyDataSetChanged();
+            }
+
+        });
 
 
         loadDreamList();
-
+        loadPlatformList();
         viewfunctions();
 
 
     }
+
 
     private void viewfunctions() {
         apbinding.adminPreviewbtn.setOnClickListener(new View.OnClickListener() {
@@ -122,8 +150,30 @@ public class AdminPortal extends AppCompatActivity {
             }
         });
 
+        apbinding.adminplatformadd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("imgurl","none");
+                bundle.putString("name","none");
+                bundle.putInt("position",-1);
+                bundle.putString("field","none");
+                com.blurspace.doov.customdialogues.platformadbottomdialog platformadbottomdialog=new platformadbottomdialog();
+                platformadbottomdialog.setArguments(bundle);
+                platformadbottomdialog.show(getSupportFragmentManager(),"platformadbottomdialog");
+            }
+        });
+
+    }
 
 
+    private void loadPlatformList() {
+
+        pladapter= new AdminPlatformAdapter(AdminPortal.this,adviewmodel.getplatformModel().getValue());
+        LinearLayoutManager llm=new LinearLayoutManager(this);
+        llm.setOrientation(RecyclerView.HORIZONTAL);
+        apbinding.adminPlatformlist.setLayoutManager(llm);
+        apbinding.adminPlatformlist.setAdapter(pladapter);
     }
 
     private void loadDreamList() {
