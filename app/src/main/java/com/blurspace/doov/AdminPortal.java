@@ -27,6 +27,7 @@ import com.blurspace.doov.customdialogues.nocondialog;
 import com.blurspace.doov.customdialogues.passresetdialog;
 import com.blurspace.doov.databinding.ActivityAdminPortalBinding;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AdminPortal extends AppCompatActivity {
@@ -62,7 +63,7 @@ public class AdminPortal extends AppCompatActivity {
                     nocondialog.show(getSupportFragmentManager(),"nocondialog");
                     nocondialog.setCancelable(false);
                 }
-            },20);
+            },0);
         }
 
         adviewmodel= new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(this.getApplication())).get(AdminPortalViewModel.class);
@@ -72,15 +73,26 @@ public class AdminPortal extends AppCompatActivity {
             public void onChanged(List<DreamsModel> dreamsModels) {
                 if(adviewmodel.getdreamModel().getValue().size()>0) {
                     apbinding.admindreamshimmer.setVisibility(View.VISIBLE);
+                    List<DreamsModel> shimmeralerter= adviewmodel.getdreamModel().getValue();
+                    if(shimmeralerter.get(shimmeralerter.size()-1).getDreamimgurl()!=null) {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                apbinding.admindreamshimmer.stopShimmer();
+                                apbinding.admindreamshimmer.hideShimmer();
+                                apbinding.admindreamshimmer.setVisibility(View.INVISIBLE);
+                                apbinding.adminDreamlist.setVisibility(View.VISIBLE);
+                            }
+                        },1000);
+
+                    }
                 }
 
                 adadapter.notifyDataSetChanged();
             }
         });
 
-        if(adviewmodel.getdreamModel().getValue().size()<2 && adviewmodel.getdreamModel().getValue().size()>0) {
-            apbinding.shimmerdreamsublay2.getRoot().setVisibility(View.INVISIBLE);
-        }
+
         loadDreamList();
 
         viewfunctions();
@@ -115,17 +127,6 @@ public class AdminPortal extends AppCompatActivity {
     }
 
     private void loadDreamList() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                apbinding.admindreamshimmer.stopShimmer();
-                apbinding.admindreamshimmer.hideShimmer();
-                apbinding.admindreamshimmer.setVisibility(View.INVISIBLE);
-                apbinding.adminDreamlist.setVisibility(View.VISIBLE);
-            }
-        },3000);
-
-
 
         adadapter= new AdminDreamAdapter(AdminPortal.this,adviewmodel.getdreamModel().getValue());
         LinearLayoutManager llm=new LinearLayoutManager(this);
