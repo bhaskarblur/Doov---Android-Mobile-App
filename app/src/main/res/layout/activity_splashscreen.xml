@@ -21,21 +21,12 @@
         app:layout_constraintVertical_bias="0.558" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="305dp"
-        android:layout_height="0dp"
-        android:paddingStart="10dp"
-        android:paddingRight="80dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/splashscreenview1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
         android:id="@+id/imageView4"
         android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:paddingTop="40dp"
+        android:layout_height="150dp"
+        android:paddingLeft="-10dp"
+        android:paddingTop="20dp"
+        android:paddingRight="-10dp"
         android:scaleType="centerCrop"
         android:src="@drawable/splashscreenview2"
         app:layout_constraintBottom_toBottomOf="parent"
