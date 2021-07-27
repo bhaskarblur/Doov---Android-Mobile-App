@@ -131,12 +131,16 @@ public class dreamadbottomdialog extends BottomSheetDialogFragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
             super.onActivityResult(requestCode, resultCode, data);
-
+        if(data==null) {
+            Toast.makeText(getActivity(), "Nothing Selected", Toast.LENGTH_SHORT).show();
+        }
+        else {
             if(requestCode==IMAGE_PICK_CODE) {
                 imageuri=data.getData();
                 Picasso.get().load(imageuri).into(dreamimg);
 
             }
+        }
     }
 
 }

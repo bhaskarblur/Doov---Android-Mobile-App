@@ -18,11 +18,14 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.blurspace.doov.Adapters.AdminCourseAdapter;
 import com.blurspace.doov.Adapters.AdminDreamAdapter;
 import com.blurspace.doov.Adapters.AdminPlatformAdapter;
+import com.blurspace.doov.Models.CourseModel;
 import com.blurspace.doov.Models.DreamsModel;
 import com.blurspace.doov.Models.PlatformModel;
 import com.blurspace.doov.ViewModels.AdminPortalViewModel;
+import com.blurspace.doov.customdialogues.courseadbottomdialog;
 import com.blurspace.doov.customdialogues.dreamadbottomdialog;
 import com.blurspace.doov.customdialogues.nocondialog;
 import com.blurspace.doov.customdialogues.platformadbottomdialog;
@@ -35,6 +38,7 @@ public class AdminPortal extends AppCompatActivity {
     private AdminPortalViewModel adviewmodel;
     public AdminDreamAdapter adadapter;
     private AdminPlatformAdapter pladapter;
+    private AdminCourseAdapter coadapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,8 +71,6 @@ public class AdminPortal extends AppCompatActivity {
             },0);
         }
 
-        if(apbinding.adminplatformshimmer.getVisibility()==View.VISIBLE) {
-        }
         adviewmodel= new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(this.getApplication())).get(AdminPortalViewModel.class);
         adviewmodel.initwork(this);
         adviewmodel.getdreamModel().observe(this, new Observer<List<DreamsModel>>() {
@@ -99,8 +101,8 @@ public class AdminPortal extends AppCompatActivity {
             public void onChanged(List<PlatformModel> platformModels) {
                 if(adviewmodel.getplatformModel().getValue().size()>0) {
                     apbinding.adminplatformshimmer.setVisibility(View.VISIBLE);
-                    List<DreamsModel> shimmeralerter= adviewmodel.getdreamModel().getValue();
-                    if(shimmeralerter.get(shimmeralerter.size()-1).getDreamimgurl()!=null) {
+                    List<PlatformModel> shimmeralerter= adviewmodel.getplatformModel().getValue();
+                    if(shimmeralerter.get(shimmeralerter.size()-1).getPlatformimgurl()!=null) {
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
@@ -118,10 +120,36 @@ public class AdminPortal extends AppCompatActivity {
             }
 
         });
+        
+        adviewmodel.getcourseModel().observe(this, new Observer<List<CourseModel>>() {
+            @Override
+            public void onChanged(List<CourseModel> courseModels) {
+                if(adviewmodel.getcourseModel().getValue().size()>0) {
+                    apbinding.admincourseshimmer.setVisibility(View.VISIBLE);
+                    List<CourseModel> shimmeralerter= adviewmodel.getcourseModel().getValue();
+                    if(shimmeralerter.get(shimmeralerter.size()-1).getCourseimgurl()!=null) {
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                apbinding.admincourseshimmer.stopShimmer();
+                                apbinding.admincourseshimmer.hideShimmer();
+                                apbinding.admincourseshimmer.setVisibility(View.INVISIBLE);
+                                apbinding.adminCourselist.setVisibility(View.VISIBLE);
+                            }
+                        },1000);
+                    }
+
+
+                }
+                coadapter.notifyDataSetChanged();
+            }
+
+        });
 
 
         loadDreamList();
         loadPlatformList();
+        loadCourseList();
         viewfunctions();
 
 
@@ -155,17 +183,43 @@ public class AdminPortal extends AppCompatActivity {
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 bundle.putString("imgurl","none");
-                bundle.putString("name","none");
+                bundle.putString("name","name");
                 bundle.putInt("position",-1);
-                bundle.putString("field","none");
+                bundle.putString("field","field");
+                bundle.putString("fordreams","fordreams");
+                bundle.putString("platformlink","plaformlink");
                 com.blurspace.doov.customdialogues.platformadbottomdialog platformadbottomdialog=new platformadbottomdialog();
                 platformadbottomdialog.setArguments(bundle);
                 platformadbottomdialog.show(getSupportFragmentManager(),"platformadbottomdialog");
             }
         });
 
+        apbinding.admincourseadd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("imgurl","none");
+                bundle.putString("name","name");
+                bundle.putInt("position",-1);
+                bundle.putString("field","field");
+                bundle.putString("fordreams","fordreams");
+                bundle.putString("courselink","courselink");
+                com.blurspace.doov.customdialogues.courseadbottomdialog courseadbottomdialog=new courseadbottomdialog();
+                courseadbottomdialog.setArguments(bundle);
+                courseadbottomdialog.show(getSupportFragmentManager(),"courseadbottomdialog");
+            }
+        });
+
     }
 
+    private void loadCourseList() {
+
+        coadapter= new AdminCourseAdapter(AdminPortal.this,adviewmodel.getcourseModel().getValue());
+        LinearLayoutManager llm=new LinearLayoutManager(this);
+        llm.setOrientation(RecyclerView.HORIZONTAL);
+        apbinding.adminCourselist.setLayoutManager(llm);
+        apbinding.adminCourselist.setAdapter(coadapter);
+    }
 
     private void loadPlatformList() {
 
@@ -185,6 +239,13 @@ public class AdminPortal extends AppCompatActivity {
         apbinding.adminDreamlist.setAdapter(adadapter);
 
     }
+
+
+
+
+
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode,Intent data) {
@@ -208,4 +269,5 @@ public class AdminPortal extends AppCompatActivity {
         super.onPause();
         this.getViewModelStore().clear();
     }
+
 }
