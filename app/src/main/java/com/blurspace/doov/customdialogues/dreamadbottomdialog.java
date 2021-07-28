@@ -25,6 +25,7 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.blurspace.doov.R;
+import com.blurspace.doov.Repositories.AdminPortalRepository;
 import com.blurspace.doov.ViewModels.AdminPortalViewModel;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.squareup.picasso.Picasso;
@@ -45,7 +46,7 @@ public class dreamadbottomdialog extends BottomSheetDialogFragment {
         Button savebtn=v.findViewById(R.id.dreamsavebtn);
         Button deletebtn=v.findViewById(R.id.dreamdeletebtn);
 
-        AdminPortalViewModel avm=new ViewModelProvider(getActivity()).get(AdminPortalViewModel.class);
+        AdminPortalRepository datarepo= new AdminPortalRepository(getContext());
         Bundle bundle=this.getArguments();
 
 
@@ -70,7 +71,7 @@ public class dreamadbottomdialog extends BottomSheetDialogFragment {
 
                 if(!name.getText().toString().isEmpty() && imageuri!=null && !field.getText().toString().isEmpty()){
 
-                avm.AddDreamtoDB(imageuri,imageuri.toString(),name.getText().toString(),field.getText().toString(), finalPos);
+                datarepo.AddDreamtoDB(imageuri,imageuri.toString(),name.getText().toString(),field.getText().toString(), finalPos);
             }
                 else {
                     Toast.makeText(getActivity(), "Something is missing!", Toast.LENGTH_SHORT).show();
@@ -82,7 +83,7 @@ public class dreamadbottomdialog extends BottomSheetDialogFragment {
             @Override
             public void onClick(View v) {
 
-                avm.RemoveDreamFromDB(finalImgurlrec,name.getText().toString(),field.getText().toString());
+                datarepo.RemoveDreamFromDB(finalImgurlrec,name.getText().toString(),field.getText().toString());
             }
         });
         dreamimg.setOnClickListener(new View.OnClickListener() {
