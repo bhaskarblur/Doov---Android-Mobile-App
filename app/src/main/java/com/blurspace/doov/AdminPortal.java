@@ -88,6 +88,7 @@ public class AdminPortal extends AppCompatActivity {
                     }
                 }
 
+                adadapter.setDreams(dreamsModels);
                 adadapter.notifyDataSetChanged();
             }
         });

@@ -57,9 +57,12 @@ public class dreamadbottomdialog extends BottomSheetDialogFragment {
              String namerec=bundle.getString("name");
             String fieldrec=bundle.getString("field");
             if(imgurlrec!=null && namerec!=null) {
-                Picasso.get().load(imageuri).into(dreamimg);
+                Picasso.get().load(imgurlrec).into(dreamimg);
                 name.setText(namerec);
                 field.setText(fieldrec);
+            }
+            else {
+                Picasso.get().load(imgurlrec).into(dreamimg);
             }
         }
 
