@@ -14,7 +14,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_medium"
         android:text="Forgot Password!"
-        android:textColor="@color/primccolor"
+        android:textColor="@color/seccolor"
         android:textSize="23sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -50,7 +50,7 @@
         android:paddingLeft="20dp"
         android:textAllCaps="false"
         android:textColor="@color/seccolor"
-        android:textColorHint="#ACACAC"
+        android:textColorHint="#959595"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
