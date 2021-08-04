@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topbar">
@@ -29,12 +30,12 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="100dp"
                 android:fontFamily="@font/poppins_medium"
+                android:letterSpacing="0.02"
                 android:lineSpacingExtra="-2sp"
                 android:paddingLeft="0dp"
                 android:text="Welcome To Admin Portal"
                 android:textColor="#fafafa"
                 android:textSize="24sp"
-                android:letterSpacing="0.02"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -246,8 +247,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="22dp"
                 android:layout_marginTop="12dp"
+                android:layout_marginBottom="20dp"
                 android:background="@color/bgcolor"
                 android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView14"
                 app:shimmer_auto_start="true">
@@ -288,7 +291,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="12dp"
+                android:layout_marginBottom="20dp"
                 android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
