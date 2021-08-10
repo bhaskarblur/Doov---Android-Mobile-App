@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:layout_marginBottom="10dp"
+    app:cardBackgroundColor="@color/bgcolor"
+    app:cardCornerRadius="8dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searchrescard"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginRight="0dp"
+        android:background="@drawable/datacards_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:selectableItemBackground">
+
+
+        <ImageView
+            android:id="@+id/imageView19"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profnextbtn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/searchrescardimg"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/appideaprofimg" />
+
+        <TextView
+            android:id="@+id/searchrescardname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:fontFamily="@font/open_sans_semibold"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="Website Developer"
+            android:textColor="@color/seccolor"
+            android:textSize="19sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/searchrescardimg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/searchrescardfield"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/calibiri"
+            android:text="Technology"
+            android:textColor="#B4B4B4"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/searchrescardimg"
+            app:layout_constraintTop_toBottomOf="@+id/searchrescardname" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

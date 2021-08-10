@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2E2E2E">
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Change Avatar"
+        android:textColor="@color/seccolor"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/curravatarimg"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="15dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <ImageView
+        android:id="@+id/yellowmalesel"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/curravatarimg"
+        app:srcCompat="@drawable/yellowmale_dp" />
+
+    <ImageView
+        android:id="@+id/blackmalesel"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        app:layout_constraintStart_toEndOf="@+id/yellowmalesel"
+        app:layout_constraintTop_toBottomOf="@+id/curravatarimg"
+        app:srcCompat="@drawable/blackmale_dp" />
+
+    <ImageView
+        android:id="@+id/blackfemalesel"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:clickable="true"
+        app:layout_constraintEnd_toStartOf="@+id/yellowfemalesel"
+        app:layout_constraintTop_toBottomOf="@+id/curravatarimg"
+        app:srcCompat="@drawable/blackfemale_dp" />
+
+    <ImageView
+        android:id="@+id/yellowfemalesel"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/curravatarimg"
+        app:srcCompat="@drawable/yellowfemale_dp" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:fontFamily="@font/open_sans"
+        android:text="Male"
+        android:textColor="#E7E7E7"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yellowmalesel" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="64dp"
+        android:fontFamily="@font/open_sans"
+        android:text="Female"
+        android:textColor="#E7E7E7"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yellowmalesel" />
+
+    <Button
+        android:id="@+id/saveavabtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/googlebtnbg"
+        android:fontFamily="@font/poppins_medium"
+        android:foreground="?android:selectableItemBackground"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textColor="#2e2e2e"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView29"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

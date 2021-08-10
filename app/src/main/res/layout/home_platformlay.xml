@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="13dp"
+
+    app:cardBackgroundColor="@color/bgcolor"
+    app:cardCornerRadius="8dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeplatformcard"
+        android:layout_width="180dp"
+        android:layout_height="192dp"
+        android:layout_marginRight="0dp"
+        android:background="@drawable/datacards_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:selectableItemBackground">
+
+
+        <ImageView
+            android:id="@+id/homeplatformcardimg"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:paddingTop="10dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/homeplatformcardname"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:fontFamily="@font/open_sans_semibold"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textColor="@color/seccolor"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/homeplatformcardimg" />
+
+        <TextView
+            android:id="@+id/homeplatformcardfield"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/calibiri"
+            android:textColor="#B4B4B4"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/homeplatformcardname" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
