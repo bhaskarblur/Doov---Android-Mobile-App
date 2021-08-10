@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1096291508208",
+    "project_id": "doov-9b92a",
+    "storage_bucket": "doov-9b92a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1096291508208:android:eeb52a02549a9958c08735",
+        "android_client_info": {
+          "package_name": "com.blurspace.doov"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1096291508208-q6e0slthrq693eet4vi9fdhj6ndbcosn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR3dK4e3SrQppxkqdpv_3-b6rCd8ONS8s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1096291508208-q6e0slthrq693eet4vi9fdhj6ndbcosn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
