@@ -31,29 +31,29 @@
 
         <ImageView
             android:id="@+id/profilenotselected2"
-            android:layout_width="30sp"
-            android:layout_height="31sp"
+            android:layout_width="23sp"
+            android:layout_height="24sp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="40dp"
+            android:layout_marginBottom="19dp"
             android:clickable="true"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/profilenotselectedicon" />
 
         <ImageView
             android:id="@+id/homenotselected2"
-            android:layout_width="32sp"
-            android:layout_height="32sp"
+            android:layout_width="25sp"
+            android:layout_height="25sp"
             android:layout_marginStart="40dp"
+            android:layout_marginBottom="19dp"
             android:clickable="true"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/homenotselectedicon" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -70,12 +70,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
 
             <ImageView
                 android:id="@+id/dreamselectedicon"
-                android:layout_width="30sp"
-                android:layout_height="30sp"
+                android:layout_width="25sp"
+                android:layout_height="25sp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="1dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -97,7 +98,7 @@
                 android:text="Dream"
                 android:textAlignment="center"
                 android:textColor="@color/primccolor"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/dreamselectedicon"
@@ -106,28 +107,28 @@
 
         <ImageView
             android:id="@+id/dreamnotselected"
-            android:layout_width="35sp"
-            android:layout_height="35sp"
-            android:layout_marginStart="40dp"
+            android:layout_width="26sp"
+            android:layout_height="26sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="18dp"
             android:clickable="true"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/dreamnotselectedicon" />
 
         <ImageView
             android:id="@+id/profilenotselected"
-            android:layout_width="30sp"
-            android:layout_height="31sp"
-            android:layout_marginEnd="30dp"
+            android:layout_width="23sp"
+            android:layout_height="24sp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="19dp"
             android:clickable="true"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/profilenotselectedicon" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -135,7 +136,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/emailboxbg"
             android:backgroundTint="#373737"
@@ -143,12 +144,13 @@
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
 
             <ImageView
                 android:id="@+id/imageView8"
-                android:layout_width="30sp"
-                android:layout_height="30sp"
+                android:layout_width="23sp"
+                android:layout_height="23sp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="1dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -170,7 +172,7 @@
                 android:text="Home"
                 android:textAlignment="center"
                 android:textColor="@color/primccolor"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView8"
@@ -179,35 +181,34 @@
 
         <ImageView
             android:id="@+id/homenotselected"
-            android:layout_width="32sp"
-            android:layout_height="32sp"
+            android:layout_width="24sp"
+            android:layout_height="24sp"
             android:layout_marginStart="40dp"
+            android:layout_marginBottom="19dp"
             android:clickable="true"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/homenotselectedicon" />
 
         <ImageView
             android:id="@+id/dreamnotselected2"
-            android:layout_width="35sp"
-            android:layout_height="35sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="40dp"
+            android:layout_width="26sp"
+            android:layout_height="26sp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="18dp"
             android:clickable="true"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/dreamnotselectedicon" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/profileselectedlay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/emailboxbg"
@@ -215,13 +216,12 @@
             android:clickable="true"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintEnd_toEndOf="parent">
 
             <ImageView
                 android:id="@+id/profileselectedicon"
-                android:layout_width="30sp"
-                android:layout_height="30sp"
+                android:layout_width="23sp"
+                android:layout_height="22sp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="1dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -236,14 +236,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="11dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Profile"
                 android:textAlignment="center"
                 android:textColor="@color/primccolor"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/profileselectedicon"
