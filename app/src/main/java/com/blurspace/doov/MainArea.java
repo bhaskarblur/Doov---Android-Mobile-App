@@ -57,6 +57,14 @@ public class MainArea extends AppCompatActivity {
         bottomnavworker();
 
     }
+    private MainArea instance;
+
+    public MainArea getinstance() {
+        if(instance==null) {
+            instance=new MainArea();
+        }
+        return instance;
+    }
 
     private void bottomnavworker() {
         ambinding.dreamnotselected.setOnClickListener(new View.OnClickListener() {
@@ -210,6 +218,7 @@ public class MainArea extends AppCompatActivity {
 
             }
         });
+
 
         ambinding.dreamnotselected2.setOnClickListener(new View.OnClickListener() {
             @Override

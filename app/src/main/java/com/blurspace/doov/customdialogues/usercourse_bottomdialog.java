@@ -56,6 +56,18 @@ public class usercourse_bottomdialog extends BottomSheetDialogFragment {
             }
         });
         Picasso.get().load(recimg).into(courseimg);
+        if(reclink.toString().contains("Udacity") || reclink.toString().contains("udacity")) {
+            visit.setText("Available On Udacity");
+        }
+        else if(reclink.toString().contains("Udemy") || reclink.toString().contains("udemy")) {
+            visit.setText("Available On Udemy");
+        }
+        else if(reclink.toString().contains("Coursera") || reclink.toString().contains("coursera")) {
+            visit.setText("Available On Coursera");
+        }
+        else {
+                visit.setText("Check Here");
+        }
         coursename.setText(recname);
         coursefield.setText(recfield);
         visit.setOnClickListener(new View.OnClickListener() {

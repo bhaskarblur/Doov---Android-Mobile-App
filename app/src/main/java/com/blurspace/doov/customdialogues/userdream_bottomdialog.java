@@ -90,13 +90,13 @@ public class userdream_bottomdialog  extends BottomSheetDialogFragment {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         for(DataSnapshot ds:snapshot.getChildren()) {
-                            if(ds.getValue().toString().contains("dreamname="+recname)
-                                    &&  ds.getValue().toString().contains("dreamfield="+recname)) {
-
+                            if(ds.getValue().toString().contains(recname)
+                                    &&  ds.getValue().toString().contains(recname)) {
+                                Toast.makeText(getContext(),ds.getKey().toString(), Toast.LENGTH_SHORT).show();
                                 dbref.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                         .child("FavoriteDreams").child(ds.getKey()).removeValue();
+                                Toast.makeText(getContext(), "Removed from Favourite Dreams", Toast.LENGTH_SHORT).show();
                             }
-                            Toast.makeText(getContext(), "Removed from Favourite Dreams", Toast.LENGTH_SHORT).show();
                             lovedbtn.setVisibility(View.INVISIBLE);
                             notlovedbtn.setVisibility(View.VISIBLE);
 

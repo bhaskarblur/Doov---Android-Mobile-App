@@ -72,7 +72,7 @@ public class homefragment extends Fragment {
     private String mParam2;
     private String filterfield="";
     private  com.blurspace.doov.Adapters.searchfieldAdapter searchfieldAdapter;
-
+    private MainArea mainArea;
     public homefragment() {
         // Required empty public constructor
     }
@@ -98,7 +98,7 @@ public class homefragment extends Fragment {
         mauth = FirebaseAuth.getInstance();
        homeViewModel= new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(this.getActivity().getApplication())).get(HomeViewModel.class);
         homeViewModel.initwork(getContext());
-
+        mainArea=new MainArea();
 
     }
 
@@ -457,11 +457,13 @@ public class homefragment extends Fragment {
         hmbinding.nestedScrollView2.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
             @Override
             public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                if(scrollY>600) {
+                if(scrollY>700) {
                     hmbinding.searchtopbtn.setVisibility(View.VISIBLE);
+
                 }
                 else{
                     hmbinding.searchtopbtn.setVisibility(View.INVISIBLE);
+
                 }
             }
         });
