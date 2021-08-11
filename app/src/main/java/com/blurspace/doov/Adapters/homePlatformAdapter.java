@@ -15,6 +15,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.blurspace.doov.MainArea;
 import com.blurspace.doov.Models.DreamsModel;
 import com.blurspace.doov.Models.PlatformModel;
 import com.blurspace.doov.R;
@@ -36,7 +37,6 @@ public class homePlatformAdapter extends RecyclerView.Adapter<homePlatformAdapte
     private Context mcontext;
     private List<PlatformModel> platformlist;
     private DatabaseReference dbref;
-
     public homePlatformAdapter() {
 
     }
