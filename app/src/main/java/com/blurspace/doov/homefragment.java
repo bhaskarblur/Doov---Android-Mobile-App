@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,19 +16,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.style.ForegroundColorSpan;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Toast;
 
 import com.blurspace.doov.Adapters.homeCourseAdapter;
 import com.blurspace.doov.Adapters.homeDreamAdapter;
@@ -38,10 +36,7 @@ import com.blurspace.doov.Models.CourseModel;
 import com.blurspace.doov.Models.DreamsModel;
 import com.blurspace.doov.Models.PlatformModel;
 import com.blurspace.doov.Models.Userauth;
-import com.blurspace.doov.ViewModels.AdminPortalViewModel;
 import com.blurspace.doov.ViewModels.HomeViewModel;
-import com.blurspace.doov.customdialogues.nocondialog;
-import com.blurspace.doov.customdialogues.notidialog;
 import com.blurspace.doov.databinding.FragmentHomefragmentBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -52,8 +47,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 
@@ -450,9 +443,11 @@ public class homefragment extends Fragment {
         hmbinding.userNotibtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                com.blurspace.doov.customdialogues.notidialog nocondialog= new notidialog();
-                nocondialog.setEnterTransition(R.anim.slide_in_right);
-                nocondialog.show(getActivity().getSupportFragmentManager(),"notidialog");
+                notidialogFragment df=new notidialogFragment();
+                FragmentTransaction transaction=getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.setCustomAnimations(R.anim.slide_in_left,R.anim.slide_out_left);
+                transaction.replace(R.id.MainFragmentLayout,df);
+                transaction.commit();
             }
         });
 

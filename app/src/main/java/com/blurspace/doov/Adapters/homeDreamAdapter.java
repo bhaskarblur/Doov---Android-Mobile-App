@@ -67,7 +67,8 @@ public class homeDreamAdapter extends RecyclerView.Adapter<homeDreamAdapter.View
                         holder.lovedbtn.setVisibility(View.VISIBLE);
                         holder.notlovedbtn.setVisibility(View.INVISIBLE);
                     }
-                    else {
+                    else if(!snapshot.getValue().toString().contains("dreamname="+dreamlist.get(position).getDreamname())
+                            &&  !snapshot.getValue().toString().contains("dreamfield="+dreamlist.get(position).getDreamfield())) {
                         holder.lovedbtn.setVisibility(View.INVISIBLE);
                         holder.notlovedbtn.setVisibility(View.VISIBLE);
                     }
@@ -87,8 +88,8 @@ public class homeDreamAdapter extends RecyclerView.Adapter<homeDreamAdapter.View
             Picasso.get().load(dreamlist.get(position).getDreamimgurl()).into(holder.img);
             holder.name.setText(dreamlist.get(position).getDreamname());
             holder.field.setText(dreamlist.get(position).getDreamfield());
-            Picasso.get().load(R.drawable.lovedicon).into(holder.lovedbtn);
-            Picasso.get().load(R.drawable.notlovedicon).into(holder.notlovedbtn);
+            Picasso.get().load(R.drawable.love_nobgicon).into(holder.lovedbtn);
+            Picasso.get().load(R.drawable.notlove_nobgicon).into(holder.notlovedbtn);
         }
 
 //        holder.notlovedbtn.setOnClickListener(new View.OnClickListener() {

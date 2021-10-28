@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.blurspace.doov.Models.CurrentDreamModel;
 import com.blurspace.doov.Models.DreamsModel;
 import com.blurspace.doov.R;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
@@ -90,6 +91,9 @@ public class userdream_bottomdialog extends BottomSheetDialogFragment {
                             }, 200);
                         } else {
                             // if no dream current
+                            CurrentDreamModel.curdreammodel curdreammodel=new CurrentDreamModel.curdreammodel(new DreamsModel(recimg,recname,recfield),null,null,null);
+                            dbref.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .child("CurrentDream").setValue(curdreammodel);
                             com.blurspace.doov.customdialogues.startdreambottomdialog startbottomdialog = new startdreambottomdialog();
                             startbottomdialog.show(getActivity().getSupportFragmentManager(), "startbottomdialog");
                             new Handler().postDelayed(new Runnable() {

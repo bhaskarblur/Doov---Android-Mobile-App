@@ -4,12 +4,24 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/activity_onboarding.xml" value="0.18" />
+        <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/admin_dreamlay.xml" value="0.16540084388185655" />
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/cantstart_bottomdialog.xml" value="0.1675213675213675" />
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/currdream_bottomdialog.xml" value="0.1675213675213675" />
+        <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/currdream_bottomdialog_2.xml" value="0.2" />
+        <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/currdream_lay.xml" value="0.1675213675213675" />
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/dreamstart_bottomdialog.xml" value="0.1675213675213675" />
+        <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/favdreams_lay.xml" value="0.1675213675213675" />
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/fragment_currentdreamviewfragment.xml" value="0.16540084388185655" />
+        <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/fragment_dreamfragment.xml" value="0.2" />
+        <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/fragment_homefragment.xml" value="0.25" />
+        <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/fragment_notidialog.xml" value="0.1675213675213675" />
+        <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/fragment_profilefragment.xml" value="0.16540084388185655" />
+        <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/home_dreamlay.xml" value="0.25" />
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/leave_bottomdialog.xml" value="0.21" />
+        <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/notificationsdialog.xml" value="0.2" />
+        <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/notificationsfragment.xml" value="0.1675213675213675" />
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/prevdream_bottomdialog.xml" value="0.1675213675213675" />
+        <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/userdream_bottomdialog.xml" value="0.1675213675213675" />
       </map>
     </option>
   </component>
