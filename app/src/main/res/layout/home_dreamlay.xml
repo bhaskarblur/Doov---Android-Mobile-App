@@ -64,10 +64,10 @@
 
         <ImageView
             android:id="@+id/homedreamcardloved"
-            android:layout_width="33dp"
-            android:layout_height="33dp"
-            android:layout_marginTop="145dp"
-            android:layout_marginEnd="10dp"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="155dp"
+            android:layout_marginEnd="15dp"
             android:clickable="true"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
@@ -75,16 +75,14 @@
 
         <ImageView
             android:id="@+id/homedreamcardnotloved"
-            android:layout_width="33dp"
-            android:layout_height="33dp"
-            android:layout_marginTop="145dp"
-            android:layout_marginEnd="10dp"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="155dp"
+            android:layout_marginEnd="15dp"
             android:clickable="true"
-            android:scaleType="centerCrop"
-
+            android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
 
 

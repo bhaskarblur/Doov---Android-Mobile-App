@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.blurspace.doov.Models.CurrentDreamModel;
 import com.blurspace.doov.Models.DreamsModel;
 import com.blurspace.doov.ViewModels.HomeViewModel;
 import com.blurspace.doov.ViewModels.dreamViewModel;
@@ -22,6 +23,7 @@ import com.blurspace.doov.Adapters.crrdreamAdapter;
 import com.blurspace.doov.Adapters.prevdreamAdapter;
 import com.blurspace.doov.Adapters.favdreamAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -39,7 +41,7 @@ public class dreamfragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private List<CurrentDreamModel.curdreammodel> Curdreamlist=new ArrayList<>();
     public dreamfragment() {
         // Required empty public constructor
     }
@@ -71,17 +73,18 @@ public class dreamfragment extends Fragment {
                              Bundle savedInstanceState) {
         dfbinding=FragmentDreamfragmentBinding.inflate(inflater,container,false);
 
-        dreamViewModel.getCurrDreamModel().observe(getActivity(), new Observer<List<DreamsModel>>() {
+        dreamViewModel.getCurrDreamModel().observe(getActivity(), new Observer<CurrentDreamModel.curdreammodel>() {
             @Override
-            public void onChanged(List<DreamsModel> dreamViewModels) {
+            public void onChanged(CurrentDreamModel.curdreammodel dreamViewModels) {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        if(dreamViewModels.size()==0) {
-                            dfbinding.nocurtxt.setVisibility(View.VISIBLE);
-                        }
-                        else if(dreamViewModels.size()>1) {
+                        if(dreamViewModels!=null) {
                             dfbinding.nocurtxt.setVisibility(View.INVISIBLE);
+                            Curdreamlist.add(dreamViewModels);
+                        }
+                        else {
+                            dfbinding.nocurtxt.setVisibility(View.VISIBLE);
                         }
                         crrdreamAdapter.notifyDataSetChanged();
                     }
@@ -112,7 +115,6 @@ public class dreamfragment extends Fragment {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-
                         if(dreamViewModels.size()==0) {
                             dfbinding.nofavtxt.setVisibility(View.VISIBLE);
                         }
@@ -131,7 +133,7 @@ public class dreamfragment extends Fragment {
 
     private void loadrecsData() {
 
-        crrdreamAdapter=new crrdreamAdapter(getContext(),dreamViewModel.getCurrDreamModel().getValue());
+        crrdreamAdapter=new crrdreamAdapter(getContext(),Curdreamlist);
         prevdreamAdapter=new prevdreamAdapter(getContext(),dreamViewModel.getPrevDreamModel().getValue());
         favdreamAdapter=new favdreamAdapter(getContext(),dreamViewModel.getFavDreamModel().getValue());
 

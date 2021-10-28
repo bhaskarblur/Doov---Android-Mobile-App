@@ -250,13 +250,14 @@ public class Loginact extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode==RC_SIGN_Gooogle){
-            logbinding.loginbtn.setVisibility(View.INVISIBLE);
-            logbinding.progresscircle.setVisibility(View.VISIBLE);
+
 
             Task<GoogleSignInAccount> task=GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 GoogleSignInAccount acc=task.getResult(ApiException.class);
                 assert acc != null;
+                logbinding.loginbtn.setVisibility(View.INVISIBLE);
+                logbinding.progresscircle.setVisibility(View.VISIBLE);
                 FirebaseGoogleAuth(acc);
 
 
