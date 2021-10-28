@@ -71,6 +71,8 @@ public class homefragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private String filterfield="";
+    private View bottombar;
+    private Boolean hidden=false;
     private  com.blurspace.doov.Adapters.searchfieldAdapter searchfieldAdapter;
     private MainArea mainArea;
     public homefragment() {
@@ -113,7 +115,7 @@ public class homefragment extends Fragment {
         ForegroundColorSpan yellowfs=new ForegroundColorSpan(Color.parseColor("#FFD107"));
         ss.setSpan(yellowfs,10,16, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         hmbinding.headline.setText(ss);
-
+        bottombar=getActivity().findViewById(R.id.bottombar);
         homeViewModel.getdreamModel().observe(getActivity(), new Observer<List<DreamsModel>>() {
             @Override
             public void onChanged(List<DreamsModel> dreamsModels) {
@@ -218,7 +220,6 @@ public class homefragment extends Fragment {
 
             }
         });
-
         homeViewModel.getsearchresModel().observe(getActivity(), new Observer<List<DreamsModel>>() {
             @Override
             public void onChanged(List<DreamsModel> dreamsModels) {
@@ -237,6 +238,7 @@ public class homefragment extends Fragment {
         loadrandomPlatforms();
         searchlayFunctions();
         getauth();
+
 
 
         return hmbinding.getRoot();
@@ -457,13 +459,22 @@ public class homefragment extends Fragment {
         hmbinding.nestedScrollView2.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
             @Override
             public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                if(scrollY>700) {
-                    hmbinding.searchtopbtn.setVisibility(View.VISIBLE);
+                if(scrollY>600) {
+                    if(hidden.equals(false)) {
+                        hmbinding.searchtopbtn.setVisibility(View.VISIBLE);
+                        Animation anim0 = AnimationUtils.loadAnimation(getContext(), R.anim.slide_out_down);
+                        bottombar.setAnimation(anim0);
+                        hidden=true;
+                        bottombar.setVisibility(View.GONE);
+                    }
 
                 }
                 else{
                     hmbinding.searchtopbtn.setVisibility(View.INVISIBLE);
-
+                    Animation anim0 = AnimationUtils.loadAnimation(getContext(), R.anim.slide_in_down);
+                    bottombar.setAnimation(anim0);
+                    bottombar.setVisibility(View.VISIBLE);
+                    hidden=false;
                 }
             }
         });
@@ -490,7 +501,7 @@ public class homefragment extends Fragment {
         hmbinding.searchcloser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_out_down);
+                Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_out_downalt);
                 hmbinding.searchlayout.setAnimation(animation);
                 hmbinding.searchlayout.setVisibility(View.INVISIBLE);
                 hmbinding.filteron.setVisibility(View.INVISIBLE);
@@ -531,24 +542,27 @@ public class homefragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Userauth userauth = snapshot.getValue(Userauth.class);
-                hmbinding.usernamehome.setText("Hello " + userauth.getUsername().toString() +"!");
-
-                if (hmbinding.usernamehome.getText().length() > 12) {
-                    hmbinding.usernamehome.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-                    hmbinding.usernamehome.setSelected(true);
-                    hmbinding.usernamehome.setSingleLine(true);
+                if(userauth!=null) {
+                    if (userauth.getUsername() != null) {
+                        hmbinding.usernamehome.setText("Hello " + userauth.getUsername().toString() + "!");
+                    }
+                    if (hmbinding.usernamehome.getText().length() > 12) {
+                        hmbinding.usernamehome.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+                        hmbinding.usernamehome.setSelected(true);
+                        hmbinding.usernamehome.setSingleLine(true);
+                    }
+                    if (userauth.getAvatar() != null) {
+                        if (userauth.getAvatar().toString().equals("yellowmale")) {
+                            Picasso.get().load(R.drawable.yellowmale_dp).into(hmbinding.useravatarhome);
+                        } else if (userauth.getAvatar().toString().equals("blackmale")) {
+                            Picasso.get().load(R.drawable.blackmale_dp).into(hmbinding.useravatarhome);
+                        } else if (userauth.getAvatar().toString().equals("yellowfemale")) {
+                            Picasso.get().load(R.drawable.yellowfemale_dp).into(hmbinding.useravatarhome);
+                        } else if (userauth.getAvatar().toString().equals("blackfemale")) {
+                            Picasso.get().load(R.drawable.blackfemale_dp).into(hmbinding.useravatarhome);
+                        }
+                    }
                 }
-
-                if (userauth.getAvatar().toString().equals("yellowmale")) {
-                    Picasso.get().load(R.drawable.yellowmale_dp).into(hmbinding.useravatarhome);
-                } else if (userauth.getAvatar().toString().equals("blackmale")) {
-                    Picasso.get().load(R.drawable.blackmale_dp).into(hmbinding.useravatarhome);
-                } else if (userauth.getAvatar().toString().equals("yellowfemale")) {
-                    Picasso.get().load(R.drawable.yellowfemale_dp).into(hmbinding.useravatarhome);
-                } else if (userauth.getAvatar().toString().equals("blackfemale")) {
-                    Picasso.get().load(R.drawable.blackfemale_dp).into(hmbinding.useravatarhome);
-                }
-
             }
 
             @Override

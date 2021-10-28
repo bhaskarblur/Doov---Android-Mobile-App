@@ -53,8 +53,7 @@ public class profilefragment extends Fragment implements PopupMenu.OnMenuItemCli
     public profilefragment() {
 
     }
-
-
+    
     public static profilefragment newInstance(String param1, String param2) {
         profilefragment fragment = new profilefragment();
         Bundle args = new Bundle();
