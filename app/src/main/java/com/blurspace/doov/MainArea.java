@@ -30,7 +30,6 @@ public class MainArea extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ambinding= ActivityMainAreaBinding.inflate(getLayoutInflater());
         setContentView(ambinding.getRoot());
-
         this.getSupportActionBar().hide();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.bgcolor, this.getTheme()));
