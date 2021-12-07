@@ -5,8 +5,8 @@
 
     <solid android:color="@color/primccolor"/>
     <corners
-        android:bottomRightRadius="18dp"
-        android:bottomLeftRadius="18dp"
-        android:topLeftRadius="18dp"
-        android:topRightRadius="18dp" />
+        android:bottomRightRadius="12dp"
+        android:bottomLeftRadius="12dp"
+        android:topLeftRadius="12dp"
+        android:topRightRadius="12dp" />
 </shape>
