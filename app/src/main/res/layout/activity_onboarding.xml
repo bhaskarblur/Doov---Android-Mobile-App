@@ -18,8 +18,8 @@
 
     <Button
         android:id="@+id/onbprog1"
-        android:layout_width="8dp"
-        android:layout_height="8dp"
+        android:layout_width="7dp"
+        android:layout_height="7dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="75dp"
         android:background="@drawable/onboardingposcircle"
@@ -30,8 +30,8 @@
 
     <Button
         android:id="@+id/onbprog2"
-        android:layout_width="8dp"
-        android:layout_height="8dp"
+        android:layout_width="7dp"
+        android:layout_height="7dp"
         android:layout_marginBottom="75dp"
         android:background="@drawable/onboardingposcircle"
         android:backgroundTint="#3D3D3D"
@@ -41,8 +41,8 @@
 
     <Button
         android:id="@+id/onbprog3"
-        android:layout_width="8dp"
-        android:layout_height="8dp"
+        android:layout_width="7dp"
+        android:layout_height="7dp"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="75dp"
         android:background="@drawable/onboardingposcircle"
