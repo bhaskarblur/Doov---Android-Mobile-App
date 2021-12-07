@@ -80,6 +80,7 @@ public class MainArea extends AppCompatActivity {
                 FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
                 transaction.setCustomAnimations(R.anim.fade_fast_2,R.anim.fade);
                 transaction.replace(R.id.MainFragmentLayout,df);
+                transaction.addToBackStack("A");
                 transaction.commit();
 
                 final ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -93,6 +94,7 @@ public class MainArea extends AppCompatActivity {
                             FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
                             transaction.setCustomAnimations(R.anim.fade_fast_2,R.anim.fade);
                             transaction.replace(R.id.MainFragmentLayout,df);
+                            transaction.addToBackStack("A");
                             transaction.commit();
                         }
                     },0);
@@ -133,6 +135,7 @@ public class MainArea extends AppCompatActivity {
                             FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
                             transaction.setCustomAnimations(R.anim.fade_fast_2,R.anim.fade);
                             transaction.replace(R.id.MainFragmentLayout,df);
+                            transaction.addToBackStack("A");
                             transaction.commit();
                         }
                     },0);
@@ -173,6 +176,7 @@ public class MainArea extends AppCompatActivity {
                             FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
                             transaction.setCustomAnimations(R.anim.fade_fast_2,R.anim.fade);
                             transaction.replace(R.id.MainFragmentLayout,df);
+                            transaction.addToBackStack("A");
                             transaction.commit();
                         }
                     },0);
@@ -212,6 +216,7 @@ public class MainArea extends AppCompatActivity {
                             FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
                             transaction.setCustomAnimations(R.anim.fade_fast_2,R.anim.fade);
                             transaction.replace(R.id.MainFragmentLayout,df);
+                            transaction.addToBackStack("A");
                             transaction.commit();
                         }
                     },0);
@@ -253,6 +258,7 @@ public class MainArea extends AppCompatActivity {
                             FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
                             transaction.setCustomAnimations(R.anim.fade_fast_2,R.anim.fade);
                             transaction.replace(R.id.MainFragmentLayout,df);
+                            transaction.addToBackStack("A");
                             transaction.commit();
                         }
                     },0);
@@ -293,6 +299,7 @@ public class MainArea extends AppCompatActivity {
                             FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
                             transaction.setCustomAnimations(R.anim.fade_fast_2,R.anim.fade);
                             transaction.replace(R.id.MainFragmentLayout,df);
+                            transaction.addToBackStack("A");
                             transaction.commit();
                         }
                     },0);

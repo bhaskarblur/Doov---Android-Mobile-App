@@ -4,13 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/drawable/bottomnavbg.xml" value="0.18076923076923077" />
+        <entry key="..\:/Android finished projects/Doov/app/src/main/res/drawable/emailboxbg.xml" value="0.18076923076923077" />
+        <entry key="..\:/Android finished projects/Doov/app/src/main/res/drawable/loginbtnbg.xml" value="0.18076923076923077" />
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/font/open_sans_semibold.xml" value="0.19230769230769232" />
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/font/poppins.xml" value="0.19230769230769232" />
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/activity_act_curr_dream.xml" value="0.22" />
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/activity_admin_portal.xml" value="0.25" />
-        <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/activity_loginact.xml" value="0.22" />
+        <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/activity_loginact.xml" value="0.25" />
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/activity_main_area.xml" value="0.33" />
-        <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/activity_onboarding.xml" value="0.25" />
+        <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/activity_onboarding.xml" value="0.22" />
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/activity_signinact.xml" value="0.25" />
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/activity_splashscreen.xml" value="0.1675213675213675" />
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/admin_courselay.xml" value="0.5" />
@@ -36,7 +38,7 @@
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/fragment_homefragment.xml" value="0.22" />
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/fragment_nocon.xml" value="0.1675213675213675" />
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/fragment_notidialog.xml" value="0.25" />
-        <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/fragment_onboarding.xml" value="0.1675213675213675" />
+        <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/fragment_onboarding.xml" value="0.33" />
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/fragment_profilefragment.xml" value="0.2" />
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/home_dreamlay.xml" value="0.5" />
         <entry key="..\:/Android finished projects/Doov/app/src/main/res/layout/home_platformlay.xml" value="0.25" />
