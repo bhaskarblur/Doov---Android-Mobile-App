@@ -56,7 +56,7 @@ public class AdminDreamAdapter extends RecyclerView.Adapter<AdminDreamAdapter.Vi
 
     @Override
     public void onBindViewHolder( AdminDreamAdapter.ViewHolder holder, int position) {
-                Picasso.get().load(dreamlist.get(position).getDreamimgurl()).into(holder.img);
+                Picasso.get().load(dreamlist.get(position).getDreamimgurl()).resize(300,300).into(holder.img);
                 holder.name.setText(dreamlist.get(position).getDreamname());
                 holder.field.setText(dreamlist.get(position).getDreamfield());
                 Picasso.get().load(R.drawable.yellow_options_icon).into(holder.optbtn);

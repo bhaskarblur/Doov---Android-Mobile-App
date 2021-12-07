@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="15dp"
+    android:clickable="true"
+    app:cardBackgroundColor="@color/bgcolor"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/prevdreamcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/datacards_bg"
+        android:clickable="true"
+        android:foreground="?android:selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/prevdreamimg"
+            android:layout_width="115dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/appideaprofimg" />
+
+        <TextView
+            android:id="@+id/prevdreamfield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/open_sans"
+            android:text="Technology"
+            android:textColor="#B4B4B4"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/prevdreamimg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/prevdreamname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.02"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="Web Developer"
+            android:textAlignment="viewStart"
+            android:textColor="@color/seccolor"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/prevdreamimg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/dreamdialogfield8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/open_sans"
+            android:letterSpacing="0.03"
+            android:text="• Daily To-Do Tasks"
+            android:textColor="#B7B7B7"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/prevdreamimg"
+            app:layout_constraintTop_toBottomOf="@+id/prevdreamfield" />
+
+        <TextView
+            android:id="@+id/dreamdialogfield12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/open_sans"
+            android:letterSpacing="0.03"
+            android:text="• Latest News Updates"
+            android:textColor="#B7B7B7"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/prevdreamimg"
+            app:layout_constraintTop_toBottomOf="@+id/dreamdialogfield8" />
+
+        <TextView
+            android:id="@+id/dreamdialogfield13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="100dp"
+            android:fontFamily="@font/open_sans"
+            android:letterSpacing="0.03"
+            android:text="..."
+            android:textColor="#B7B7B7"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/dreamdialogfield12"
+            app:layout_constraintTop_toBottomOf="@+id/dreamdialogfield8" />
+
+        <TextView
+            android:id="@+id/dreamdialogfield11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="100dp"
+            android:fontFamily="@font/open_sans"
+            android:letterSpacing="0.03"
+            android:text="• Motivation"
+            android:textColor="#B7B7B7"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/dreamdialogfield8"
+            app:layout_constraintTop_toBottomOf="@+id/prevdreamfield" />
+
+        <Button
+            android:id="@+id/prevdreamrest"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginBottom="11dp"
+            android:background="@drawable/contbtnbg"
+            android:fontFamily="@font/open_sans_semibold"
+            android:foreground="?android:selectableItemBackground"
+            android:text="Restart"
+            android:textAllCaps="false"
+            android:textColor="@color/primccolor"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dreamdialogfield11"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

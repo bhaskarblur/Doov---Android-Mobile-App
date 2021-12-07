@@ -44,7 +44,7 @@ public class AdminCourseAdapter extends RecyclerView.Adapter<AdminCourseAdapter.
 
     @Override
     public void onBindViewHolder(AdminCourseAdapter.ViewHolder holder, int position) {
-                Picasso.get().load(courselist.get(position).getCourseimgurl()).into(holder.img);
+                Picasso.get().load(courselist.get(position).getCourseimgurl()).resize(300,300).into(holder.img);
                 holder.name.setText(courselist.get(position).getCoursename());
                 holder.field.setText(courselist.get(position).getCoursefield());
                 Picasso.get().load(R.drawable.yellow_options_icon).into(holder.optbtn);

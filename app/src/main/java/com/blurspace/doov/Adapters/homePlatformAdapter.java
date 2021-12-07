@@ -55,7 +55,7 @@ public class homePlatformAdapter extends RecyclerView.Adapter<homePlatformAdapte
     @Override
     public void onBindViewHolder(homePlatformAdapter.ViewHolder holder, int position) {
         if(platformlist!=null) {
-            Picasso.get().load(platformlist.get(position).getPlatformimgurl()).into(holder.img);
+            Picasso.get().load(platformlist.get(position).getPlatformimgurl()).resize(300,300).into(holder.img);
             holder.name.setText(platformlist.get(position).getPlatformname());
             holder.field.setText(platformlist.get(position).getPlatformfield());
         }

@@ -43,7 +43,7 @@ public class AdminPlatformAdapter extends RecyclerView.Adapter<AdminPlatformAdap
 
     @Override
     public void onBindViewHolder(AdminPlatformAdapter.ViewHolder holder, int position) {
-                Picasso.get().load(platformlist.get(position).getPlatformimgurl()).into(holder.img);
+                Picasso.get().load(platformlist.get(position).getPlatformimgurl()).resize(300,300).into(holder.img);
                 holder.name.setText(platformlist.get(position).getPlatformname());
                 holder.field.setText(platformlist.get(position).getPlatformfield());
                 Picasso.get().load(R.drawable.yellow_options_icon).into(holder.optbtn);

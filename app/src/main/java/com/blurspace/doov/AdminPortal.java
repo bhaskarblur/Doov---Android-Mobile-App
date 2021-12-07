@@ -1,6 +1,7 @@
 package com.blurspace.doov;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,9 +15,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Toast;
 
 import com.blurspace.doov.Adapters.AdminCourseAdapter;
 import com.blurspace.doov.Adapters.AdminDreamAdapter;
@@ -27,7 +25,6 @@ import com.blurspace.doov.Models.PlatformModel;
 import com.blurspace.doov.ViewModels.AdminPortalViewModel;
 import com.blurspace.doov.customdialogues.courseadbottomdialog;
 import com.blurspace.doov.customdialogues.dreamadbottomdialog;
-import com.blurspace.doov.customdialogues.nocondialog;
 import com.blurspace.doov.customdialogues.platformadbottomdialog;
 import com.blurspace.doov.databinding.ActivityAdminPortalBinding;
 
@@ -59,9 +56,11 @@ public class AdminPortal extends AppCompatActivity {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    com.blurspace.doov.customdialogues.nocondialog nocondialog= new nocondialog();
-                    nocondialog.show(getSupportFragmentManager(),"nocondialog");
-                    nocondialog.setCancelable(false);
+                    noconFragment df=new noconFragment();
+                    FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
+                    transaction.setCustomAnimations(R.anim.fade_fast_2,R.anim.fade);
+                    transaction.replace(R.id.MainFragmentLayout,df);
+                    transaction.commit();
                 }
             },0);
         }
@@ -157,6 +156,7 @@ public class AdminPortal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AdminPortal.this,MainArea.class));
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_left);
             }
         });
 

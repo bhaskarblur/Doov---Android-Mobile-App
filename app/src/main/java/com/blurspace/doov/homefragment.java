@@ -447,6 +447,7 @@ public class homefragment extends Fragment {
                 FragmentTransaction transaction=getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.setCustomAnimations(R.anim.slide_in_left,R.anim.slide_out_left);
                 transaction.replace(R.id.MainFragmentLayout,df);
+                transaction.addToBackStack("A");
                 transaction.commit();
             }
         });
@@ -454,7 +455,7 @@ public class homefragment extends Fragment {
         hmbinding.nestedScrollView2.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
             @Override
             public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                if(scrollY>600) {
+                if(scrollY>400) {
                     if(hidden.equals(false)) {
                         hmbinding.searchtopbtn.setVisibility(View.VISIBLE);
                         Animation anim0 = AnimationUtils.loadAnimation(getContext(), R.anim.slide_out_down);
