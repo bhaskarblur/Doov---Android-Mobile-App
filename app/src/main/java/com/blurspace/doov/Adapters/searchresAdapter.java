@@ -40,7 +40,7 @@ public class searchresAdapter extends RecyclerView.Adapter<searchresAdapter.view
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
         holder.name.setText(searchreslist.get(position).getDreamname());
-        Picasso.get().load(searchreslist.get(position).getDreamimgurl()).into(holder.img);
+        Picasso.get().load(searchreslist.get(position).getDreamimgurl()).resize(300,300).into(holder.img);
         holder.field.setText(searchreslist.get(position).getDreamfield());
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -56,7 +56,8 @@ public class userdream_bottomdialog extends BottomSheetDialogFragment {
                             && ds.getValue().toString().contains("dreamfield=" + recfield)) {
                         lovedbtn.setVisibility(View.VISIBLE);
                         notlovedbtn.setVisibility(View.INVISIBLE);
-                    } else {
+                    }  else if(!snapshot.getValue().toString().contains("dreamname="+recname)
+                            &&  !snapshot.getValue().toString().contains("dreamfield="+recfield)){
                         lovedbtn.setVisibility(View.INVISIBLE);
                         notlovedbtn.setVisibility(View.VISIBLE);
                     }

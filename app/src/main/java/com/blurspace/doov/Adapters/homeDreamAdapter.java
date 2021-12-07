@@ -85,7 +85,7 @@ public class homeDreamAdapter extends RecyclerView.Adapter<homeDreamAdapter.View
         });
 
         if(dreamlist!=null) {
-            Picasso.get().load(dreamlist.get(position).getDreamimgurl()).into(holder.img);
+            Picasso.get().load(dreamlist.get(position).getDreamimgurl()).resize(300,300).into(holder.img);
             holder.name.setText(dreamlist.get(position).getDreamname());
             holder.field.setText(dreamlist.get(position).getDreamfield());
             Picasso.get().load(R.drawable.love_nobgicon).into(holder.lovedbtn);

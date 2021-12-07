@@ -175,7 +175,7 @@ public class profilefragment extends Fragment implements PopupMenu.OnMenuItemCli
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
                 transaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_left);
                 transaction.replace(R.id.MainFragmentLayout, ai);
-                transaction.addToBackStack("B");
+                transaction.addToBackStack("A");
                 transaction.commit();
             }
         });

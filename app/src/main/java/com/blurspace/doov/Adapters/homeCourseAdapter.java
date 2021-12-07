@@ -48,7 +48,7 @@ public class homeCourseAdapter extends RecyclerView.Adapter<homeCourseAdapter.Vi
     @Override
     public void onBindViewHolder(homeCourseAdapter.ViewHolder holder, int position) {
         if(Courselist!=null) {
-            Picasso.get().load(Courselist.get(position).getCourseimgurl()).into(holder.img);
+            Picasso.get().load(Courselist.get(position).getCourseimgurl()).resize(300,300).into(holder.img);
             holder.name.setText(Courselist.get(position).getCoursename());
             holder.field.setText(Courselist.get(position).getCoursefield());
         }
