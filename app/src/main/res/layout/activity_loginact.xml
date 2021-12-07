@@ -170,6 +170,7 @@
                 android:clickable="true"
                 android:fontFamily="@font/phetsarath_bold"
                 android:foreground="?android:selectableItemBackground"
+                android:letterSpacing="0.02"
                 android:text="Login"
                 android:textAlignment="center"
                 android:textAllCaps="false"
