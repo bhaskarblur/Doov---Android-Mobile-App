@@ -37,7 +37,7 @@
     <EditText
         android:id="@+id/dreamsetname"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="48dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="75dp"
         android:layout_marginEnd="20dp"
@@ -60,7 +60,7 @@
     <EditText
         android:id="@+id/dreamsetfield"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="48dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
