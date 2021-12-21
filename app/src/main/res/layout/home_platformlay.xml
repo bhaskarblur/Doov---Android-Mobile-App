@@ -12,8 +12,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/homeplatformcard"
-        android:layout_width="175dp"
-        android:layout_height="185dp"
+        android:layout_width="170dp"
+        android:layout_height="172dp"
         android:layout_marginRight="0dp"
         android:background="@drawable/datacards_bg"
         android:clickable="true"
@@ -33,19 +33,20 @@
 
         <TextView
             android:id="@+id/homeplatformcardname"
-            android:layout_width="125dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="14dp"
             android:layout_marginTop="4dp"
             android:ellipsize="marquee"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:fontFamily="@font/poppins_medium"
+            android:fontFamily="@font/phetsarath_bold"
+            android:letterSpacing="0.02"
             android:marqueeRepeatLimit="marquee_forever"
             android:scrollHorizontally="true"
             android:singleLine="true"
             android:textColor="@color/seccolor"
-            android:textSize="15sp"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/homeplatformcardimg" />
 
@@ -55,9 +56,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="5dp"
-            android:fontFamily="@font/open_sans"
+            android:fontFamily="@font/phetsarath_regular"
+            android:letterSpacing="0.02"
             android:textColor="#B4B4B4"
-            android:textSize="14sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/homeplatformcardname" />
 
